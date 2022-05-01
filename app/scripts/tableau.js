@@ -5,7 +5,7 @@ let tableau = [
         model: 'assets/models/table.gltf',
         position: '0 0 0',
         scale: '0.2 0.2 0.2',
-        parchment: 'assets/images/parchment_table1.png'
+        parchment: 'assets/images/heart.png'
     },
     {
         key: 'table1',
@@ -20,7 +20,8 @@ let tableau = [
         marker: 'assets/markers/pattern-table2-marker.patt',
         model: 'assets/models/table.gltf',
         position: '0 0 0',
-        scale: '0.2 0.2 0.2'
+        scale: '0.2 0.2 0.2',
+        parchment: 'assets/images/parchment_table2.png'
     },
     {
         key: 'table3',
@@ -60,6 +61,7 @@ function buildTableau(parent) {
             parchmentEntity.setAttribute('src', marker.parchment);
             parchmentEntity.setAttribute('position', '1 0 0');
             parchmentEntity.setAttribute('look-at', '[camera]');
+            parchmentEntity.setAttribute("material", "opacity: 100.0; transparent: true");
             markerEntity.appendChild(parchmentEntity);
         }
 

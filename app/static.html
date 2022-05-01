@@ -9,7 +9,9 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico">
 <!--        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<!--        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
         <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+        <script src="scripts/components.js"></script>
         <!-- https://github.com/mayognaise/aframe-gif-shader -->
     <!--    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>-->
     </head>
@@ -19,25 +21,34 @@
 
             <a-assets>
                 <img id="parchment_table1" src="assets/images/parchment_table1.png">
+                <img id="villa_schiarino" src="assets/images/villa_schiarino.jpeg">
+                <img id="schiarino_inner" src="assets/images/schiarino_inner.jpg">
+                <a-asset-item id="table-gltf" src="assets/models/table.gltf"></a-asset-item>
+                <a-asset-item id="table-obj" src="assets/models/table.obj"></a-asset-item>
+                <a-asset-item id="table-mtl" src="assets/models/table.mtl"></a-asset-item>
+                <a-asset-item id="cake-obj" src="assets/models/cake.obj"></a-asset-item>
+                <a-asset-item id="cake-mtl" src="assets/models/cake.mtl"></a-asset-item>
             </a-assets>
 
-<!--            <a-entity-->
-<!--                    position="0 1 -5"-->
-<!--                    scale="0.5 0.5 0.5"-->
-<!--                    gltf-model="assets/models/table.gltf">-->
-<!--            </a-entity>-->
 
-            <a-plane src="#parchment_table1" position="0 1 -2"></a-plane>
+<!--            <a-plane src="#villa_schiarino" position="0 2 -10" look-at="[camera]"></a-plane>-->
+
+            <a-entity gltf-model="#table-gltf" position="0 1.25 -2" scale="0.5 0.5 0.5"></a-entity>
+            <a-plane src="#parchment_table1" position="0 2 -2" material="opacity: 100.0; transparent: true" look-at="[camera]"></a-plane>
+
+<!--            <a-sky src="#schiarino_inner"></a-sky>-->
 
             <a-entity id="sky" geometry="primitive: sphere; radius: 5000"
                       material="shader: gradient; topColor: 235 235 245; bottomColor: 185 185 210"
                       scale="-1 1 1"></a-entity>
 
-    <!--        <a-entity id="color"-->
-    <!--                  position="0 0.7 0"-->
-    <!--                  animation="property: components.text.material.uniforms.color.value; type: color; to: red; dir: alternate; loop: true"-->
-    <!--                  text="color: white; align: center; value: Animating color; width: 1.5">-->
-    <!--        </a-entity>-->
+            <a-entity id="color"
+                      position="0 1 -1"
+                      animation="property: components.text.material.uniforms.color.value; type: color; to: red; dir: alternate; loop: true"
+                      text="color: white; align: center; value: Tavolo 1; width: 1.5">
+            </a-entity>
+
+<!--            <a-entity camera look-controls position="0 1.6 0"></a-entity>-->
         </a-scene>
     </body>
 </html>
