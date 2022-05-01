@@ -1,0 +1,24 @@
+{
+  "name": "wedding-ar",
+  "description": "Wedding WebVR.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "budo --live --verbose --port 3000 --open --ssl --dir app/",
+    "deploy": "ghpages",
+    "ghpages": "ghpages"
+  },
+  "devDependencies": {
+    "budo": "^11.7.0",
+    "gh-pages": "3.2.3"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-example",
+    "aframe-boilerplate",
+    "aframe-scene",
+    "webvr",
+    "vr",
+    "wedding"
+  ]
+}
