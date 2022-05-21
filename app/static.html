@@ -28,12 +28,17 @@
                 <a-asset-item id="table-mtl" src="assets/models/table.mtl"></a-asset-item>
                 <a-asset-item id="cake-obj" src="assets/models/cake.obj"></a-asset-item>
                 <a-asset-item id="cake-mtl" src="assets/models/cake.mtl"></a-asset-item>
+                <a-asset-item id="heart-gltf" src="assets/models/heart.gltf"></a-asset-item>
+                <a-asset-item id="heart-obj" src="assets/models/heart.obj"></a-asset-item>
+                <a-asset-item id="heart-mtl" src="assets/models/heart.mtl"></a-asset-item>
             </a-assets>
 
 
 <!--            <a-plane src="#villa_schiarino" position="0 2 -10" look-at="[camera]"></a-plane>-->
 
-            <a-entity gltf-model="#table-gltf" position="0 1.25 -2" scale="0.5 0.5 0.5"></a-entity>
+<!--            <a-entity gltf-model="#table-gltf" position="0 1.25 -2" scale="0.5 0.5 0.5" material="color: red"></a-entity>-->
+<!--            <a-gltf-model src="#table-gltf" position="0 1.25 -2" scale="0.5 0.5 0.5"></a-gltf-model>-->
+            <a-obj-model src="#table-obj" mtl="#table-mtl" position="0 1.25 -2" scale="0.5 0.5 0.5"></a-obj-model>
             <a-plane src="#parchment_table1" position="0 2 -2" material="opacity: 100.0; transparent: true" look-at="[camera]"></a-plane>
 
 <!--            <a-sky src="#schiarino_inner"></a-sky>-->
@@ -47,6 +52,10 @@
                       animation="property: components.text.material.uniforms.color.value; type: color; to: red; dir: alternate; loop: true"
                       text="color: white; align: center; value: Tavolo 1; width: 1.5">
             </a-entity>
+
+            <a-image src="assets/images/heart.png" look-at="[camera]" animation="property: components.text.material.uniforms.color.value; type: color; to: red; dir: alternate; loop: true"></a-image>
+
+            <a-obj-model src="#heart-obj" mtl="#heart-mtl" position="0 2 -2"></a-obj-model>
 
 <!--            <a-entity camera look-controls position="0 1.6 0"></a-entity>-->
         </a-scene>

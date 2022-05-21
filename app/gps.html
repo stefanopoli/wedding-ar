@@ -26,11 +26,15 @@
             <a-asset-item id="table-mtl" src="assets/models/table.mtl"></a-asset-item>
             <a-asset-item id="cake-obj" src="assets/models/cake.obj"></a-asset-item>
             <a-asset-item id="cake-mtl" src="assets/models/cake.mtl"></a-asset-item>
+            <img id="heart" src="assets/images/heart.png">
+            <a-asset-item id="heart-obj" src="assets/models/heart.obj"></a-asset-item>
+            <a-asset-item id="heart-mtl" src="assets/models/heart.mtl"></a-asset-item>
         </a-assets>
 
         <div>ciao</div>
 
-        <a-camera gps-camera="minDistance: 40;" rotation-reader></a-camera>
+<!--        <a-camera gps-camera="minDistance: 40;" rotation-reader></a-camera>-->
+        <a-camera gps-projected-camera rotation-reader></a-camera>
     </a-scene>
 </body>
 </html>

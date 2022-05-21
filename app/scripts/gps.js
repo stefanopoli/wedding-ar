@@ -43,23 +43,29 @@ window.onload = () => {
 
     // first get current user location
     return navigator.geolocation.getCurrentPosition(function (position) {
-        console.log('lat: '+position.coords.latitude);
+        console.log(`lat: ${position.coords.latitude} - lon: ${position.coords.latitude}`, position.coords);
         // alert(`lon: ${position.coords.longitude} ; lat: ${position.coords.latitude}`);
 
-        // if(!lon && !lat) {
-            // lat = position.coords.latitude + 0.000002;
-            // lon = position.coords.longitude + 0.000002;
-            lat = position.coords.latitude - 0.001;
-            lon = position.coords.longitude - 0.001;
+        // lat = position.coords.latitude + 0.000002;
+        // lon = position.coords.longitude + 0.000002;
+        lat = position.coords.latitude - 0.001;
+        lon = position.coords.longitude - 0.001;
 
-            let tableEntity = document.createElement('a-entity');
-            tableEntity.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${lon};`);
-            // tableEntity.setAttribute('position', `0 1 -5`);
-            tableEntity.setAttribute('scale', '5 5 5');
-            tableEntity.setAttribute('gltf-model', 'https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf');
+        // let tableEntity = document.createElement('a-entity');
+        // // tableEntity.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${lon};`);
+        // tableEntity.setAttribute('gps-projected-entity-place', `latitude: ${lat}; longitude: ${lon};`);
+        // tableEntity.setAttribute('scale', '5 5 5');
+        // tableEntity.setAttribute('gltf-model', 'https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf');
+        // scene.appendChild(tableEntity);
 
-            scene.appendChild(tableEntity);
-        // }
+        // let tableEntity = document.createElement('a-entity');
+        let heartEntity = document.createElement('a-obj-model');
+        // tableEntity.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${lon};`);
+        heartEntity.setAttribute('gps-projected-entity-place', `latitude: ${lat}; longitude: ${lon};`);
+        heartEntity.setAttribute('scale', '100 100 100');
+        heartEntity.setAttribute('src', '#heart-obj');
+        heartEntity.setAttribute('mtl', '#heart-mtl');
+        scene.appendChild(heartEntity);
 
         // const placeText = document.createElement('a-link');
         // placeText.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${lon};`);
